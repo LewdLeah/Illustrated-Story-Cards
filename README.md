@@ -12,7 +12,7 @@ const generateImages = async ({
     useConsole = false,
     outputPath = "./",
     folder = "images",
-    title = "LewdLeah - Lore Builder",
+    title = "Illustrated Story Cards",
     apiKey
 } = {}) => {
     if (!prompt || typeof prompt !== "string") {
