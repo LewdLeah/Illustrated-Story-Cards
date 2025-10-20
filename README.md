@@ -1,4 +1,4 @@
-To use this little tool, export your story cards file, fill in the 2 commented inputs at the bottom (story cards array and OpenRouter API key), run the script externally, and then find the newly created images folder:
+To use this little tool, export your story cards file, fill in the 2 commented inputs at the bottom (story cards array and OpenRouter API key), run the script externally (I used VS Code), and then find the newly created images folder:
 ```javascript
 require("dotenv").config();
 const fs = require("fs");
