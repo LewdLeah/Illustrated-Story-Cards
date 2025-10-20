@@ -119,6 +119,7 @@ const pictureBook = async ({ storyCards = [], apiKey = "", lore = "" } = {}) => 
         }).catch(error => {
             console.error(error.message);
         });
+        const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
         await new Promise(resolve => setTimeout(resolve, randInt(2000, 4000)));
     }
     console.log("All done!");
