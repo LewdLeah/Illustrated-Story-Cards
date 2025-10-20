@@ -95,7 +95,7 @@ const generateImages = async ({
 const pictureBook = async ({ storyCards = [], apiKey = "", lore = "" } = {}) => {
     lore = lore.trim();
     for (const card of storyCards) {
-        const normalize = (s) => (s
+        const norm = (s) => (s
             .replace(/[#*_~•·∙⋅]+/g, "")
             .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
             .replace(/\u00A0|\u2000-\u200B|\u202F|\u205F|\u3000/g, " ")
@@ -111,8 +111,8 @@ const pictureBook = async ({ storyCards = [], apiKey = "", lore = "" } = {}) => 
         );
         generateImages({
             folder: "images",
-            filename: `${normalize(card.title).replace(/[^a-z0-9 _-]/gi, "").trim().replace(/\s+/g, "_").replace(/_+/, "_").replace(/^The /i, "")}.png`,
-            prompt: `${lore ? `Broader context:\n${lore}\n\n` : ""}# Create an anime-style illustration (no text) for the following passage:\n${normalize(card.value)}`,
+            filename: `${norm(card.title).replace(/[^a-z0-9 _-]/gi, "").trim().replace(/^The +/i, "").replace(/\s+/g, "_").replace(/_+/, "_")}.png`,
+            prompt: `${lore ? `Broader context:\n${lore}\n\n` : ""}# Create an anime-style illustration (no text) for the following passage:\n${norm(card.value)}`,
             useConsole: true,
             attempts: 6,
             apiKey
