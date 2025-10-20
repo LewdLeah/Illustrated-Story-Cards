@@ -121,12 +121,16 @@ const pictureBook = async ({ storyCards = [], apiKey = "", lore = "" } = {}) => 
         });
         await new Promise(resolve => setTimeout(resolve, randInt(2000, 4000)));
     }
+    console.log("All done!");
     return;
 };
-await pictureBook({
-    storyCards: [], // Put your exported story cards array here
-    apiKey: "", // OpenRouter API key to generate your story card images
-    lore: "" // Optional: Include some extra info/context about your scenario
-});
+(async () => {
+    await pictureBook({
+        storyCards: [], // Put your exported story cards array here
+        apiKey: "", // OpenRouter API key to generate your story card images
+        lore: "" // Optional: Include some extra info/context about your scenario
+    });
+    return;
+})();
 ```
 I hope you will enjoy~ ❤️
